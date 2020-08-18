@@ -1,43 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
- body {
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 height: 100vh;
-	 background: #222;
+
+html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+	border: 6px solid;
+	animation: rainbow-bg 4s infinite;
+    border-image-slice: 1;
 }
- .gradient-border {
-	 --border-width: 10px;
-	 position: relative;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 width: 100%;
-	 height: 100%;
-	 font-family: Lato, sans-serif;
-	 font-size: 2.5rem;
-	 text-transform: uppercase;
-	 color: white;
-	 background: #222;
-	 border-radius: var(--border-width);
+
+body {
+	font-family: 'Lato';
+	background-color: #1f1f1f;
 }
- .gradient-border::after {
-	 position: absolute;
-	 content: "";
-	 top: calc(-1 * var(--border-width));
-	 left: calc(-1 * var(--border-width));
-	 z-index: -1;
-	 width: calc(100% + var(--border-width) * 2);
-	 height: calc(100% + var(--border-width) * 2);
-	 background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
-	 background-size: 300% 300%;
-	 background-position: 0 50%;
-	 border-radius: calc(2 * var(--border-width));
-	 animation: moveGradient 4s alternate infinite;
+
+@keyframes rainbow-bg{
+	100%,0%{
+        border-color: rgb(255,0,0);
+    }
+    8%{
+        border-color: rgb(255,127,0);
+    }
+    16%{
+        border-color: rgb(255,255,0);
+    }
+    25%{
+        border-color: rgb(127,255,0);
+    }
+    33%{
+        border-color: rgb(0,255,0);
+    }
+    41%{
+        border-color: rgb(0,255,127);
+    }
+    50%{
+        border-color: rgb(0,255,255);
+    }
+    58%{
+    	border-color: rgb(0,127,255);
+    }
+    66%{
+   		border-color: rgb(0,0,255);
+    }
+    75%{
+    	border-color: rgb(127,0,255);
+    }
+    83%{
+    	border-color: rgb(255,0,255);
+    }
+    91%{
+    	border-color: rgb(255,0,127);
+    }
 }
- @keyframes moveGradient {
-	 50% {
-		 background-position: 100% 50%;
-	}
-}
+
+
+ 
  
